@@ -1,0 +1,4 @@
+{
+    "arn:aws:connect:us-east-1:339712848648:instance/7e8ae7b3-664d-4223-85ea-f8bd77c6e5a4/contact-flow/54fcb596-224a-451b-b51d-9d48930a55a9": "arn:aws:connect:us-east-1:339712848648:instance/38e6755e-ebcc-4e56-93c1-d754408ee4b0/contact-flow/2a5f7f32-d6bf-48e0-ba94-765a86007ca1",
+    "arn:aws:connect:us-east-1:339712848648:instance/7e8ae7b3-664d-4223-85ea-f8bd77c6e5a4/queue/cd291027-6b7a-4d56-9090-42802e88ee72": "arn:aws:connect:us-east-1:339712848648:instance/38e6755e-ebcc-4e56-93c1-d754408ee4b0/queue/3be701e7-ec46-4194-8a87-517090b7d932"
+}

@@ -1,0 +1,150 @@
+{
+    "Version": "2019-10-30",
+    "StartAction": "3f390602-a32a-4b75-8bfc-fc9b86c7375b",
+    "Metadata": {
+        "entryPointPosition": {
+            "x": 40,
+            "y": 40
+        },
+        "ActionMetadata": {
+            "3f390602-a32a-4b75-8bfc-fc9b86c7375b": {
+                "position": {
+                    "x": 220.8,
+                    "y": 78.4
+                }
+            },
+            "7c2a81b2-65c1-44c5-a4ce-7a0d26ced4b5": {
+                "position": {
+                    "x": 1317.6,
+                    "y": 353.6
+                }
+            },
+            "acf58386-40d0-42ab-9943-0da8294cee23": {
+                "position": {
+                    "x": 1416,
+                    "y": 78.4
+                }
+            },
+            "32645dfb-ef32-4a82-be36-fcbdeb86e3a8": {
+                "position": {
+                    "x": 802.4,
+                    "y": 83.2
+                },
+                "parameters": {
+                    "QueueId": {
+                        "displayName": "notbasicqueue"
+                    }
+                },
+                "queue": {
+                    "text": "notbasicqueue"
+                }
+            },
+            "ebd7273b-191a-45f3-9957-afbf86850bff": {
+                "position": {
+                    "x": 1033.6,
+                    "y": 1.6
+                }
+            },
+            "fb3ebe3a-7b50-454b-b816-9a296bd2a224": {
+                "position": {
+                    "x": 484,
+                    "y": 100.8
+                },
+                "isFriendlyName": true,
+                "name": "Play prompt block"
+            }
+        },
+        "Annotations": []
+    },
+    "Actions": [
+        {
+            "Parameters": {
+                "FlowLoggingBehavior": "Enabled"
+            },
+            "Identifier": "3f390602-a32a-4b75-8bfc-fc9b86c7375b",
+            "Type": "UpdateFlowLoggingBehavior",
+            "Transitions": {
+                "NextAction": "fb3ebe3a-7b50-454b-b816-9a296bd2a224"
+            }
+        },
+        {
+            "Parameters": {
+                "Text": "Welcome to the slimshady experience"
+            },
+            "Identifier": "fb3ebe3a-7b50-454b-b816-9a296bd2a224",
+            "Type": "MessageParticipant",
+            "Transitions": {
+                "NextAction": "32645dfb-ef32-4a82-be36-fcbdeb86e3a8",
+                "Errors": [
+                    {
+                        "NextAction": "7c2a81b2-65c1-44c5-a4ce-7a0d26ced4b5",
+                        "ErrorType": "NoMatchingError"
+                    }
+                ]
+            }
+        },
+        {
+            "Parameters": {},
+            "Identifier": "7c2a81b2-65c1-44c5-a4ce-7a0d26ced4b5",
+            "Type": "DisconnectParticipant",
+            "Transitions": {}
+        },
+        {
+            "Parameters": {},
+            "Identifier": "acf58386-40d0-42ab-9943-0da8294cee23",
+            "Type": "TransferContactToQueue",
+            "Transitions": {
+                "NextAction": "7c2a81b2-65c1-44c5-a4ce-7a0d26ced4b5",
+                "Errors": [
+                    {
+                        "NextAction": "7c2a81b2-65c1-44c5-a4ce-7a0d26ced4b5",
+                        "ErrorType": "QueueAtCapacity"
+                    },
+                    {
+                        "NextAction": "7c2a81b2-65c1-44c5-a4ce-7a0d26ced4b5",
+                        "ErrorType": "NoMatchingError"
+                    }
+                ]
+            }
+        },
+        {
+            "Parameters": {
+                "QueueId": "arn:aws:connect:us-east-1:339712848648:instance/38e6755e-ebcc-4e56-93c1-d754408ee4b0/queue/3be701e7-ec46-4194-8a87-517090b7d932"
+            },
+            "Identifier": "32645dfb-ef32-4a82-be36-fcbdeb86e3a8",
+            "Type": "UpdateContactTargetQueue",
+            "Transitions": {
+                "NextAction": "ebd7273b-191a-45f3-9957-afbf86850bff",
+                "Errors": [
+                    {
+                        "NextAction": "7c2a81b2-65c1-44c5-a4ce-7a0d26ced4b5",
+                        "ErrorType": "NoMatchingError"
+                    }
+                ]
+            }
+        },
+        {
+            "Parameters": {
+                "EventHooks": {
+                    "AgentWhisper": "arn:aws:connect:us-east-1:339712848648:instance/38e6755e-ebcc-4e56-93c1-d754408ee4b0/contact-flow/2a5f7f32-d6bf-48e0-ba94-765a86007ca1"
+                },
+                "EventHooksConfiguration": {
+                    "AgentWhisper": {
+                        "DisableExecution": "false"
+                    }
+                }
+            },
+            "Identifier": "ebd7273b-191a-45f3-9957-afbf86850bff",
+            "Type": "UpdateContactEventHooks",
+            "Transitions": {
+                "NextAction": "acf58386-40d0-42ab-9943-0da8294cee23",
+                "Errors": [
+                    {
+                        "NextAction": "7c2a81b2-65c1-44c5-a4ce-7a0d26ced4b5",
+                        "ErrorType": "NoMatchingError"
+                    }
+                ]
+            }
+        }
+    ]
+}
