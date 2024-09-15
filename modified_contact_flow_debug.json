@@ -45,7 +45,7 @@
                     "y": 1.6
                 }
             },
-            "fb3ebe3a-7b50-454b-b816-9a296bd2a224": {
+            "75580d5e-d11b-4d21-a5fc-bf27996bb750": {
                 "position": {
                     "x": 484,
                     "y": 100.8
@@ -64,14 +64,14 @@
             "Identifier": "3f390602-a32a-4b75-8bfc-fc9b86c7375b",
             "Type": "UpdateFlowLoggingBehavior",
             "Transitions": {
-                "NextAction": "fb3ebe3a-7b50-454b-b816-9a296bd2a224"
+                "NextAction": "75580d5e-d11b-4d21-a5fc-bf27996bb750"
             }
         },
         {
             "Parameters": {
                 "Text": "Welcome to the slimshady experience"
             },
-            "Identifier": "fb3ebe3a-7b50-454b-b816-9a296bd2a224",
+            "Identifier": "75580d5e-d11b-4d21-a5fc-bf27996bb750",
             "Type": "MessageParticipant",
             "Transitions": {
                 "NextAction": "32645dfb-ef32-4a82-be36-fcbdeb86e3a8",
